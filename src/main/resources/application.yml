@@ -1,9 +1,9 @@
 app:
   datasource:
-      url: jdbc:mysql://114.55.239.78:3307/jdcos
-      username: shanglei
-      password: shanglei008
-      pool-size: 5
+    url: jdbc:mysql://114.55.239.78:3307/jdcos
+    username: shanglei
+    password: shanglei008
+    pool-size: 5
 
 server:
   port: 8080
