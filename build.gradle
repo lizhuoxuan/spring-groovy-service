@@ -1,0 +1,40 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.4.RELEASE'
+    id 'java'
+    id 'groovy'
+    id 'application'
+    id "com.github.johnrengelman.shadow" version "4.0.4"
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.xzlzx.hzb'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+def groovyVersion = '2.5.6'
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // groovy
+    compile "org.codehaus.groovy:groovy:$groovyVersion"
+    compile "org.codehaus.groovy:groovy-json:$groovyVersion"
+    compile "org.codehaus.groovy:groovy-sql:$groovyVersion"
+    compile "org.codehaus.groovy:groovy-dateutil:$groovyVersion"
+    compile "org.codehaus.groovy:groovy-console:$groovyVersion"
+
+    // mysql
+    compile group: 'com.alibaba', name: 'druid', version: '1.1.16'
+//    compile 'com.alibaba:druid-spring-boot-starter:1.1.10'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.15'
+
+    // spring-swagger2
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
