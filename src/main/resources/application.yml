@@ -1,14 +1,9 @@
-spring:
-  ##数据库连接信息
+app:
   datasource:
-    druid:
       url: jdbc:mysql://114.55.239.78:3307/jdcos
       username: shanglei
       password: shanglei008
-      driver-class-name: com.mysql.jdbc.Driver
-      ###################以下为druid增加的配置###########################
-      type: com.alibaba.druid.pool.DruidDataSource
-
+      pool-size: 5
 
 server:
   port: 8080
