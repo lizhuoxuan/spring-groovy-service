@@ -18,7 +18,6 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    compile 'org.springframework.boot:spring-boot-configuration-processor'
     
     // groovy
     compile "org.codehaus.groovy:groovy:$groovyVersion"
@@ -29,7 +28,6 @@ dependencies {
 
     // mysql
     compile group: 'com.alibaba', name: 'druid', version: '1.1.16'
-//    compile 'com.alibaba:druid-spring-boot-starter:1.1.10'
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.15'
 
     // spring-swagger2
