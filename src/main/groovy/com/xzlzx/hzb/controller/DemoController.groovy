@@ -24,7 +24,7 @@ class DemoController {
 
     @GetMapping("/test/db")
     def dbDemo() {
-        def a= db.firstRow("select * from t_test")
+        def a = db.firstRow("select 1 as haha")
         return a
     }
 
