@@ -1,0 +1,15 @@
+dependencies {
+    implementation(group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.1.2')
+    implementation group: 'com.alibaba', name: 'druid-spring-boot-starter', version: '1.1.18'
+
+    annotationProcessor 'org.projectlombok:lombok:1.18.2'
+    compileOnly 'org.projectlombok:lombok:1.18.2'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.2'
+    testCompileOnly 'org.projectlombok:lombok:1.18.2'
+
+    // spring-swagger2
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+}
+
+mainClassName = "com.xzlzx.groovyservice.SpringGroovyServiceApplication"
