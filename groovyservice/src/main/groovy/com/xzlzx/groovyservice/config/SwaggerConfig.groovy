@@ -1,4 +1,4 @@
-package com.xzlzx.hzb.config
+package com.xzlzx.groovyservice.config
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -20,7 +20,7 @@ class SwaggerConfig {
                 .apiInfo(apiInfo())
                 .select()
         //为当前包路径
-                .apis(RequestHandlerSelectors.basePackage("com.xzlzx.hzb.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.xzlzx.groovyservice.controller"))
                 .paths(PathSelectors.any())
                 .build()
     }

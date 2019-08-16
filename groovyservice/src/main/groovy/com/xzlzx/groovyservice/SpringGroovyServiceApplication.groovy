@@ -1,4 +1,4 @@
-package com.xzlzx.hzb
+package com.xzlzx.groovyservice
 
 
 import org.springframework.boot.SpringApplication

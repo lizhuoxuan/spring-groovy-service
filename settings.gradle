@@ -1,6 +1,3 @@
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-    }
-}
 rootProject.name = 'spring-groovy-service'
+include("groovyservice")
+include("spring-transaction")
