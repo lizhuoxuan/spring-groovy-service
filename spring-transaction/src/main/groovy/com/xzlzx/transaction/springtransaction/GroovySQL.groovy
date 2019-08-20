@@ -4,6 +4,8 @@ import groovy.sql.Sql
 
 import javax.sql.DataSource
 import java.sql.SQLException
+import java.util.concurrent.atomic.AtomicBoolean
+import java.util.concurrent.atomic.AtomicInteger
 import java.util.logging.ConsoleHandler
 import java.util.logging.Level
 
@@ -227,20 +229,27 @@ class GroovySQL extends Sql {
         }
     }
 
-    private boolean isSubTransaction = false
+    private AtomicBoolean isSubTransaction = new AtomicBoolean(false)
 
     @Override
     void withTransaction(Closure closure) throws SQLException {
-
-        if (isSubTransaction) {
+        if (isSubTransaction.get()) {
             closure.call()
         } else {
-            isSubTransaction = true
+            isSubTransaction.set(true)
             try {
                 super.withTransaction(closure)
             } finally {
-                isSubTransaction = false
+                isSubTransaction.set(false)
             }
         }
+    }
+
+    private AtomicInteger ai = new AtomicInteger(0)
+    private int i = 0
+
+    void plus_i() {
+       ai.incrementAndGet()
+       i++
     }
 }
